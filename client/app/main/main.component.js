@@ -8,6 +8,8 @@ export class MainController {
   awesomeThings = [];
   newThing = '';
 
+  searchResults = []; 
+
   /*@ngInject*/
   constructor($http, $state) {
     this.$http = $http;
@@ -20,6 +22,11 @@ export class MainController {
     this.$http.get('/api/things')
       .then(response => {
         this.awesomeThings = response.data;
+      });
+
+    this.$http.get('/api/items')
+      .then(response => {
+        this.searchResults = response.data; 
       });
   }
 
