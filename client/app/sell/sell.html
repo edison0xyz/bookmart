@@ -1,0 +1,48 @@
+<div class="container">
+
+    <div class="row"> 
+        <div class="col-sm-12">
+          <h1>Sell your book</h1>
+        </div>
+        <div class="col-sm-12">
+
+            <form class="form" name="form" ng-submit="sell.sellBook(form)" novalidate>
+
+                <div class="form-group" ng-class="{ 'has-success': form.name.$valid && sell.submitted,
+                                            'has-error': form.name.$invalid && sell.submitted }">
+                  <label>Book title</label>
+
+                  <input type="text" name="name" class="form-control" ng-model="sell.title"
+                         required/>
+                  <p class="help-block" ng-show="form.name.$error.required && vm.submitted">
+                    A Title is required
+                  </p>
+                </div>
+
+
+                <div class="form-group" ng-class="{ 'has-success': form.name.$valid && sell.submitted,
+                                            'has-error': form.name.$invalid && sell.submitted }">
+                  <label>Condition</label>
+
+                  <input type="text" name="name" class="form-control" ng-model="sell.condition"
+                         required/>
+                  <p class="help-block" ng-show="form.name.$error.required && vm.submitted">
+                    A Condition is required
+                  </p>
+                </div>
+
+
+                <div>
+                  <button class="btn btn-default btn-lg btn-register" type="submit">
+                    Sell Book
+                  </button>
+                </div>
+
+
+            </form>
+        </div>
+    </div> 
+
+
+
+</div> 
