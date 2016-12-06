@@ -1,5 +1,4 @@
 import angular from 'angular';
-import uibModal from 'angular-ui-bootstrap'
 import uiRouter from 'angular-ui-router';
 import routing from './main.routes';
 
@@ -14,15 +13,10 @@ export class MainController {
     this.$state = $state;
   }
 
-  show(){ 
-    console.log("here");
-    uibModal.open();
-  }
-
   $onInit() {
     this.$http.get('/api/items')
       .then(response => {
-        this.searchResults = response.data; 
+        this.searchResults = response.data;
       });
   }
 }

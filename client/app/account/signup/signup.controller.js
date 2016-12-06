@@ -14,7 +14,7 @@ export default class SignupController {
     name: '',
     email: '',
     password: '',
-    phone:''
+    phone: ''
   };
   errors = {};
   submitted = false;
