@@ -4,11 +4,7 @@ import routing from './main.routes';
 
 export class MainController {
   $http;
-
-  awesomeThings = [];
-  newThing = '';
-
-  searchResults = []; 
+  searchResults = [];
 
   /*@ngInject*/
   constructor($http, $state) {
@@ -17,44 +13,25 @@ export class MainController {
   }
 
   $onInit() {
-
-    console.log("init");
-    this.$http.get('/api/things')
-      .then(response => {
-        this.awesomeThings = response.data;
-      });
-
     this.$http.get('/api/items')
       .then(response => {
         this.searchResults = response.data; 
       });
   }
 
-  addThing() {
-    console.log(this.newThing);
-    if(this.newThing) {
-      this.$http.post('/api/things', {
-        name: this.newThing
-      });
-      this.newThing = '';
-    }
-  }
+  // addThing() {
+  //   console.log(this.newThing);
+  //   if(this.newThing) {
+  //     this.$http.post('/api/things', {
+  //       name: this.newThing
+  //     });
+  //     this.newThing = '';
+  //   }
+  // }
 
-
-  search() {
-    console.log(this.newThing);
-    if(this.newThing) {
-      //this.$http.post('/api/things', {
-      name: this.newThing
-      //};
-      this.newThing = '';
-    }
-    this.$state.go('search');
-  }
-
-  deleteThing(thing) {
-    this.$http.delete(`/api/things/${thing._id}`);
-  }
+  // deleteThing(thing) {
+  //   this.$http.delete(`/api/things/${thing._id}`);
+  // }
 }
 
 export default angular.module('projectApp.main', [uiRouter])
