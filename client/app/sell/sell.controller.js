@@ -33,7 +33,10 @@ export default class SellController {
 
     this.$http.post('/api/items', {
       title: this.title, 
-      condition: this.condition 
+      condition: this.condition,
+      description: this.description,
+      isSold: false, 
+      date: new Date()
     }); 
 
     // if(this.newThing) {
