@@ -6,5 +6,5 @@ import PostController from './post.controller';
 
 export default angular.module('projectApp.admin', ['projectApp.auth', 'ui.router'])
   .config(routes)
-  .controller('Post', PostController)
+  .controller('PostController', PostController)
   .name;

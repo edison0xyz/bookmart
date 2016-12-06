@@ -8,7 +8,7 @@ type Item = {
   condition: string;
 };
 
-export default class SellController {
+export default class PostController {
   user: User = {
     name: '',
     email: '',

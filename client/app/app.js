@@ -5,7 +5,6 @@ import angular from 'angular';
 import ngCookies from 'angular-cookies';
 import ngResource from 'angular-resource';
 import ngSanitize from 'angular-sanitize';
-
 import uiRouter from 'angular-ui-router';
 import uiBootstrap from 'angular-ui-bootstrap';
 // import ngMessages from 'angular-messages';
@@ -17,10 +16,9 @@ import {
 } from './app.config';
 
 import _Auth from '../components/auth/auth.module';
+import manage from './manage';
 import account from './account';
 import admin from './admin';
-import sell from './sell';
-import manage from './manage';
 import post from './post';
 import navbar from '../components/navbar/navbar.component';
 import footer from '../components/footer/footer.component';
@@ -31,7 +29,7 @@ import util from '../components/util/util.module';
 import './app.scss';
 
 angular.module('projectApp', [ngCookies, ngResource, ngSanitize, uiRouter, uiBootstrap, _Auth,
-  account, admin, sell, manage, post, navbar, footer, main, constants, util
+  account, admin, manage, post, navbar, footer, main, constants, util
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {

@@ -7,7 +7,7 @@ export default function routes($stateProvider) {
     url: '/post',
     template: require('./post.html'),
     controller: 'PostController',
-    controllerAs: 'post',
+    controllerAs: 'sell',
     authenticate: 'user'
   });
 }

@@ -6,39 +6,39 @@
         </div>
         <div class="col-sm-12">
 
-            <form class="form" name="form" ng-submit="sell.sellBook(form)" novalidate>
+            <form class="form" name="form" ng-submit="post.sellBook(form)" novalidate>
 
-                <div class="form-group" ng-class="{ 'has-success': form.title.$valid && sell.submitted, 'has-error': form.title.$invalid && sell.submitted }">
+                <div class="form-group" ng-class="{ 'has-success': form.title.$valid && post.submitted, 'has-error': form.title.$invalid && post.submitted }">
                   <label>Book title</label>
 
-                  <input type="text" name="title" class="form-control" ng-model="sell.title" required/>
-                  <p class="help-block" ng-show="form.title.$error.required && sell.submitted">
+                  <input type="text" name="title" class="form-control" ng-model="post.title" required/>
+                  <p class="help-block" ng-show="form.title.$error.required && post.submitted">
                     A Title is required
                   </p>
                 </div>
 
 
-                <div class="form-group" ng-class="{ 'has-success': form.condition.$valid && sell.submitted,'has-error': form.condition.$invalid && sell.submitted }">
+                <div class="form-group" ng-class="{ 'has-success': form.condition.$valid && post.submitted,'has-error': form.condition.$invalid && post.submitted }">
                   <label>Condition</label>
 
-                  <input type="text" name="condition" class="form-control" ng-model="sell.condition"required/>
-                  <p class="help-block" ng-show="form.condition.$error.required && sell.submitted">
+                  <input type="text" name="condition" class="form-control" ng-model="post.condition"required/>
+                  <p class="help-block" ng-show="form.condition.$error.required && post.submitted">
                     A Condition is required
                   </p>
                 </div>
 
-                 <div class="form-group" ng-class="{ 'has-success': form.description.$valid && sell.submitted,'has-error': form.description.$invalid && sell.submitted }">
+                 <div class="form-group" ng-class="{ 'has-success': form.description.$valid && post.submitted,'has-error': form.description.$invalid && post.submitted }">
                   <label>Description</label>
-                  <input type="text" name="description" class="form-control" ng-model="sell.description"required/>
-                  <p class="help-block" ng-show="form.description.$error.required && sell.submitted">
+                  <input type="text" name="description" class="form-control" ng-model="post.description"required/>
+                  <p class="help-block" ng-show="form.description.$error.required && post.submitted">
                     A description is required
                   </p>
                 </div>
 
-                <div class="form-group" ng-class="{ 'has-success': form.price.$valid && sell.submitted,'has-error': form.price.$invalid && sell.submitted }">
+                <div class="form-group" ng-class="{ 'has-success': form.price.$valid && post.submitted,'has-error': form.price.$invalid && post.submitted }">
                   <label>Price</label>
-                  <input type="text" name="price" class="form-control" ng-model="sell.price"required/>
-                  <p class="help-block" ng-show="form.price.$error.required && sell.submitted">
+                  <input type="text" name="price" class="form-control" ng-model="post.price"required/>
+                  <p class="help-block" ng-show="form.price.$error.required && post.submitted">
                     A description is required
                   </p>
                 </div>
