@@ -1,15 +1,22 @@
 import angular from 'angular';
+import uibModal from 'angular-ui-bootstrap'
 import uiRouter from 'angular-ui-router';
 import routing from './main.routes';
 
 export class MainController {
   $http;
   searchResults = [];
+  showContact=false;
 
   /*@ngInject*/
   constructor($http, $state) {
     this.$http = $http;
     this.$state = $state;
+  }
+
+  show(){ 
+    console.log("here");
+    uibModal.open();
   }
 
   $onInit() {
@@ -18,20 +25,6 @@ export class MainController {
         this.searchResults = response.data; 
       });
   }
-
-  // addThing() {
-  //   console.log(this.newThing);
-  //   if(this.newThing) {
-  //     this.$http.post('/api/things', {
-  //       name: this.newThing
-  //     });
-  //     this.newThing = '';
-  //   }
-  // }
-
-  // deleteThing(thing) {
-  //   this.$http.delete(`/api/things/${thing._id}`);
-  // }
 }
 
 export default angular.module('projectApp.main', [uiRouter])

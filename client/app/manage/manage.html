@@ -1,0 +1,28 @@
+<div class="container"> 
+<h1>Manage my Listing</h1> 
+    <div ng-show="manage.listings.length > 0">
+        <div class="panel panel-default">
+            <div class="panel-body" ng-repeat="item in manage.listings | filter: manage.Auth.getCurrentUserSync().email">
+                <row> 
+                    <div class="col-md-3">
+                        <a href="#" class="thumbnail">
+                            <img src="../../assets/images/blank.jpg" alt="...">
+                        </a>
+                    </div>
+                    <div class="col-md-6">
+                        <h1>{{item.title}} </h1> 
+                        <p>Sold by: {{item.sellerName}}</p>
+                        <p> Date posted: {{item.date | date:'medium'}} </p> 
+                        <p> Condition:{{item.condition}} </p> 
+                        <p> {{item.description}}</p> 
+                    </div>
+                    <div class="col-md-3">
+                        <h1>${{item.price}}.00</h1>
+                        <span class="text-muted"><b>Email</b>: {{item.sellerEmail}}</span><br> 
+                        <span class-"text-muted"><b>Phone</b>: {{item.sellerPhone}}</span>
+                    </div>
+                </row>
+            </div>
+        </div>
+    </div> 
+</div> 

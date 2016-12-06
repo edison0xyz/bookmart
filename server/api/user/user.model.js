@@ -33,6 +33,7 @@ var UserSchema = new Schema({
       }
     }
   },
+  phone: String, 
   provider: String,
   salt: String,
   google: {},

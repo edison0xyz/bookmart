@@ -8,5 +8,6 @@ export default function routes($stateProvider) {
     template: require('./sell.html'),
     controller: 'SellController',
     controllerAs: 'sell',
+    authenticate: 'user'
   });
 }
