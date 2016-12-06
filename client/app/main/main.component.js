@@ -4,8 +4,8 @@ import routing from './main.routes';
 
 export class MainController {
   $http;
+  email = '';
   searchResults = [];
-  showContact=false;
 
   /*@ngInject*/
   constructor($http, $state) {
