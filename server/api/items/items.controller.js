@@ -78,6 +78,13 @@ export function show(req, res) {
     .catch(handleError(res));
 }
 
+
+export function markSold(req, res) { 
+  return Items.findOneAndUpdate({_id: req.params.id}, {$set:{isSold:true}}).exec()
+    .then(handleEntityNotFound(res))
+    .catch(handleError(res));
+}
+
 // Creates a new Items in the DB
 export function create(req, res) {
   return Items.create(req.body)
@@ -90,7 +97,7 @@ export function upsert(req, res) {
   if(req.body._id) {
     delete req.body._id;
   }
-  return Items.findOneAndUpdate({_id: req.params.id}, req.body, {upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
+  return Items.findOneAndUpdate(req.params.id, req.body, {upsert: true, setDefaultsOnInsert: true, runValidators: true}).exec()
 
     .then(respondWithResult(res))
     .catch(handleError(res));

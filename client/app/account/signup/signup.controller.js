@@ -7,6 +7,7 @@ type User = {
   name: string;
   email: string;
   password: string;
+  phone: string;
 };
 
 export default class SignupController {
@@ -18,6 +19,7 @@ export default class SignupController {
   };
   errors = {};
   submitted = false;
+  passwordMatch = false;
   Auth;
   $state;
 

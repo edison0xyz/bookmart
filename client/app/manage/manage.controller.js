@@ -20,4 +20,25 @@ export default class ManageController {
         this.list = response.data;
       });
   }  
+
+  markSold(id) { 
+    console.log(id);
+    this.$http.patch(`/api/items/${id}`);
+    for(var i = 0; i < this.list.length; i++){
+      if(this.list[i]._id == id) { 
+        console.log(this.list[i]);
+      }
+    }
+    this.$state.reload();
+  }
+
+  deleteListing(id) {
+    console.log(id);
+    this.$http.delete(`/api/items/${id}`);
+    for(var i = 0; i < this.list.length; i++){
+      if(this.list[i]._id == id) { 
+        this.list.splice(i, 1);
+      }
+    }
+  }
 }

@@ -14,7 +14,11 @@ export default class PostController {
     this.$state = $state;
   }
   sellBook(form) {
-    this.$http.post('/api/items', {
+
+    this.submitted = true;
+
+    if(form.$valid) {
+      this.$http.post('/api/items', {
       title: this.title,
       condition: this.condition,
       description: this.description,
@@ -25,5 +29,7 @@ export default class PostController {
       sellerPhone: this.Auth.getCurrentUserSync().phone,
       date: new Date()
     });
+    }
+    
   }
 }
