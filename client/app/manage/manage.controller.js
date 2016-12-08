@@ -19,7 +19,7 @@ export default class ManageController {
       .then(response=> {
         this.list = response.data;
       });
-  }  
+  }
 
   markSold(id) { 
     console.log(id);

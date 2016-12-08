@@ -4,6 +4,7 @@ import mongoose from 'mongoose';
 
 var ItemsSchema = new mongoose.Schema({
   title: String,
+  author: String,
   condition: String,
   description: String,
   price: String,
