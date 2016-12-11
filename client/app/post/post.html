@@ -37,9 +37,12 @@
 
                 <div class="form-group" ng-class="{ 'has-success': form.price.$valid && post.submitted,'has-error': form.price.$invalid && post.submitted }">
                   <label>Price</label>
-                  <input type="text" name="price" class="form-control" ng-model="post.price"required/>
+                  <input type="number" name="price" class="form-control" min="0" ng-model="post.price"required/>
                   <p class="help-block" ng-show="form.price.$error.required && post.submitted">
                     A price is required
+                  </p>
+                  <p class="help-block" ng-show="form.price.$error.number && post.submitted">
+                    Price is not valid
                   </p>
                 </div>
 
