@@ -26,8 +26,7 @@
                       <div class="col-md-3">
                         <h1>${{item.price}}.00</h1>
 
-                        <button class="btn btn-success" ng-disabled=item.isSold ng-click="manage.markSold(item._id)">{{item.isSold ? "Sold" : "Mark as Sold"}}</button><br>
-                        <!-- <button class="btn btn-danger" ng-click="manage.deleteListing(item._id)">Delete</button> -->
+                        <button class="btn btn-success btn-space" ng-disabled=item.isSold ng-click="manage.markSold(item._id)">{{item.isSold ? "Sold" : "Mark as Sold"}}</button>
                         <button class="btn btn-danger" ng-click="manage.open(item._id)">Delete</button>
                       </div>
                 </row>

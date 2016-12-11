@@ -63,17 +63,16 @@
           <p class="help-block" ng-show="vm.submitted">
             
           </p>
+        </div>
 
 
         <div class="form-group" ng-class="{ 'has-success': form.phone.$valid && vm.submitted,
                                             'has-error': form.phone.$invalid && vm.submitted }">
-          <label>Phone Number</label>
+          <label>Phone Number (Optional)</label>
 
           <input type="text" name="phone" class="form-control" ng-model="vm.user.phone"
-                 required/>
-          <p class="help-block" ng-show="form.phone.$error.required && vm.submitted">
-            A phone is required
-          </p>
+                 />
+
         </div>
 
 
@@ -88,11 +87,11 @@
         </div>
 
         <hr/>
-        <div class="row">
+        <!-- <div class="row">
           <div class="col-sm-4 col-md-3">
             <oauth-buttons classes="btn-block"></oauth-buttons>
           </div>
-        </div>
+        </div> -->
       </form>
     </div>
   </div>

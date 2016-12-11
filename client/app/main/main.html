@@ -34,9 +34,9 @@
               </div>
               <div id="results" class="col-md-6">
                 <h1>{{item.title}}</h1> 
-                <p>Sold by: {{item.sellerName}}</p>
-                <p> Date posted: {{item.date | date:'medium'}} </p> 
-                <p> <b>Condition:</b> {{item.condition}} </p> 
+                <p><b>Sold by:</b> {{item.sellerName}}</p>
+                <p><b>Date posted:</b> {{item.date | date:'medium'}} </p> 
+                <p><b>Condition:</b> {{item.condition}} </p> 
                 <label>Description:</label>
                 <p> {{item.description}}</p> 
               </div>
@@ -52,7 +52,8 @@
                 <div ng-hide=item.isSold>
                   
                   <span class="text-muted"><b>Email</b>: {{item.sellerEmail}}</span><br> 
-                  <span class-"text-muted"><b>Phone</b>: {{item.sellerPhone}}</span>
+                  <span class-"text-muted"><b>Phone</b>: {{item.sellerPhone}} <span ng-if="!item.sellerPhone">Number not provided</span>
+                  </span>
                 </div>
               </div>
             </row>
