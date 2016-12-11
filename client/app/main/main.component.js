@@ -8,9 +8,10 @@ export class MainController {
   searchResults = [];
 
   /*@ngInject*/
-  constructor($http, $state) {
+  constructor($http, $state, $scope) {
     this.$http = $http;
     this.$state = $state;
+    this.$scope = $scope;
   }
 
   $onInit() {
@@ -18,6 +19,10 @@ export class MainController {
       .then(response => {
         this.searchResults = response.data;
       });
+  }
+
+  myFilter = function(item) { 
+    return item.isSold; 
   }
 }
 

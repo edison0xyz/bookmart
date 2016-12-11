@@ -1,7 +1,7 @@
 <header class="hero-unit" id="banner">
   <div class="container">
-
-    <h2> Your one stop solution to buy and sell textbook </h2>
+    <img src="../../assets/images/book.png" height="20%" width="20%"/>
+    <h2> Your One Stop Solution to Buy and Sell Textbooks</h2>
     <div> 
 
       <div class="row">
@@ -32,19 +32,28 @@
                   <img src="../../assets/images/blank.jpg" alt="...">
                 </a>
               </div>
-              <div class="col-md-6">
-                <h1>{{item.title}} </h1> 
+              <div id="results" class="col-md-6">
+                <h1>{{item.title}}</h1> 
                 <p>Sold by: {{item.sellerName}}</p>
                 <p> Date posted: {{item.date | date:'medium'}} </p> 
-                <p> Condition:{{item.condition}} </p> 
+                <p> <b>Condition:</b> {{item.condition}} </p> 
+                <label>Description:</label>
                 <p> {{item.description}}</p> 
               </div>
+
+
 
               <div class="col-md-3">
 
                 <h1>${{item.price}}.00</h1>
-                <span class="text-muted"><b>Email</b>: {{item.sellerEmail}}</span><br> 
-                <span class-"text-muted"><b>Phone</b>: {{item.sellerPhone}}</span>
+
+                <span ng-show=item.isSold class="label label-danger">Sold</span>
+
+                <div ng-hide=item.isSold>
+                  
+                  <span class="text-muted"><b>Email</b>: {{item.sellerEmail}}</span><br> 
+                  <span class-"text-muted"><b>Phone</b>: {{item.sellerPhone}}</span>
+                </div>
               </div>
             </row>
           </div>
