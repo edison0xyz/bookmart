@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <button type="button" ng-click="$dismiss()" class="close">&times;</button>
+  <h4 class="modal-title">Edit Price</h4>
+</div>
+<div class="modal-body">
+  <p>Please enter new price for: <strong>{{temp.title}}</strong> and click <strong>Save</strong></p>
+  <div class="input-group input-group-lg">
+  <span class="input-group-addon" id="sizing-addon1">$</span>
+  <input type="number" class="form-control" ng-model="temp.price" placeholder="Price" value={{temp.price}}>
+</div>
+</div>
+<div class="modal-footer">
+    <button ng-class="btn-danger" ng-click="manage.editPrice(temp, $scope.newPrice)" class="btn">Save</button>
+    <button ng-class="btn-default" ng-click="$dismiss()" class="btn">Cancel</button>
+</div>

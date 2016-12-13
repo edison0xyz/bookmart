@@ -7,12 +7,14 @@ export class MainController {
   $http;
   email = '';
   searchResults = [];
+  Auth;
 
   /*@ngInject*/
-  constructor($http, $state, $scope) {
+  constructor($http, $state, $scope, Auth) {
     this.$http = $http;
     this.$state = $state;
     this.$scope = $scope;
+    this.Auth = Auth;
   }
 
   $onInit() {
@@ -23,10 +25,11 @@ export class MainController {
   }
 }
 
-export default angular.module('projectApp.main', [uiRouter, 'projectApp.search'])
+export default angular.module('projectApp.main', [uiRouter, 'projectApp.auth', 'projectApp.search'])
   .config(routing)
   .component('main', {
     template: require('./main.html'),
-    controller: MainController
+    controller: MainController,
+    controllerAS: 'main'
   })
   .name;

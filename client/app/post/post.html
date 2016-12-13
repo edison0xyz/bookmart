@@ -37,13 +37,21 @@
 
                 <div class="form-group" ng-class="{ 'has-success': form.price.$valid && post.submitted,'has-error': form.price.$invalid && post.submitted }">
                   <label>Price</label>
-                  <input type="number" name="price" class="form-control" min="0" ng-model="post.price"required/>
+                  <input type="number" name="price" class="form-control" min="0" max="9999" ng-model="post.price"required/>
                   <p class="help-block" ng-show="form.price.$error.required && post.submitted">
                     A price is required
                   </p>
                   <p class="help-block" ng-show="form.price.$error.number && post.submitted">
                     Price is not valid
                   </p>
+                  <p class="help-block" ng-show="form.price.$error.min && post.submitted">
+                    Price cannot be less than 0!
+                  </p>
+                  <p class="help-block" ng-show="form.price.$error.max && post.submitted">
+                    Psst. Can you please lower the price of your book?
+                  </p>
+
+
                 </div>
 
               </row>

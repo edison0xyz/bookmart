@@ -78,6 +78,13 @@ export function show(req, res) {
     .catch(handleError(res));
 }
 
+export function editPrice(req, res) { 
+  console.log(req);
+  return Items.findOneAndUpdate({_id: req.params.id}, {$set:{price: req.params.price}}).exec()
+    .then(handleEntityNotFound(res))
+    .catch(handleError(res));
+}
+
 
 export function markSold(req, res) { 
   return Items.findOneAndUpdate({_id: req.params.id}, {$set:{isSold:true}}).exec()
