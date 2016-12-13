@@ -19,13 +19,31 @@
 <div class="container"> 
   <div class="row" ng-show="searchText">
     <div class="col-lg-12" >
-      <h1 class="page-header">Search Results:</h1>
-      <h3 ng-hide="($ctrl.searchResults | filter:searchText).length"> No results found</h3> 
+
+      <div class="row">
+        <div class="col-md-8">
+          <h2>Search Results:</h2>
+          <h5>   {{number}} result<span ng-show="number>1">s</span> found</h5>
+        </div>
+        <div class="col-md-4"> 
+          <br>
+          <label>Filter</label>
+          <div class="checkbox">
+            <label>
+              <input ng-model="isSold" type="checkbox"> View Sold Items
+            </label>
+          </div>
+        </div> 
+      </div>
 
 
-      <div ng-show="($ctrl.searchResults | filter:searchText).length > 0">
+      
+      <h3 ng-hide="($ctrl.searchResults | filter:search:this).length"> No results found</h3> 
+
+
+      <div ng-show="($ctrl.searchResults | filter:search:this).length > 0">
         <div class="panel panel-default">
-          <div class="panel-body" ng-repeat="item in $ctrl.searchResults | filter:searchText">
+          <div class="panel-body" ng-repeat="item in $ctrl.searchResults | search:this">
             <row> 
               <div class="col-md-3">
                 <a href="#" class="thumbnail">
@@ -40,8 +58,6 @@
                 <label>Description:</label>
                 <p> {{item.description}}</p> 
               </div>
-
-
 
               <div class="col-md-3">
 

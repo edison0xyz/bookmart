@@ -1,6 +1,7 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import routing from './main.routes';
+import search from '../search/search.filter'
 
 export class MainController {
   $http;
@@ -20,13 +21,9 @@ export class MainController {
         this.searchResults = response.data;
       });
   }
-
-  myFilter = function(item) { 
-    return item.isSold; 
-  }
 }
 
-export default angular.module('projectApp.main', [uiRouter])
+export default angular.module('projectApp.main', [uiRouter, 'projectApp.search'])
   .config(routing)
   .component('main', {
     template: require('./main.html'),

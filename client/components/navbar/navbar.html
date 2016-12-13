@@ -16,7 +16,7 @@
         </li>
         <li ng-show="$ctrl.isAdmin()" ui-sref-active="active"><a ui-sref="admin">Admin</a></li>
         <li ui-sref-active="active"><a ui-sref="post">Sell</a></li>
-        <li ui-sref-active="active"><a ui-sref="manage">Manage</a></li>
+        <li ng-show="$ctrl.isLoggedIn()" ui-sref-active="active"><a ui-sref="manage">Manage</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
