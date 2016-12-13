@@ -57,7 +57,7 @@ export default class ManageController {
             this.$scope.temp = this.temp;
 
             const modalInstance = this.$uibModal.open({
-              animation:true,
+              animation: true,
               template: require('./edit.html'),
               controller: "ManageController",
               controllerAs: "manage",
@@ -74,16 +74,20 @@ export default class ManageController {
     this.getObject();    
   }
 
+  sleep(milliseconds) {
+    var start = new Date().getTime();
+    for (var i = 0; i < 1e7; i++) {
+      if ((new Date().getTime() - start) > milliseconds){
+        break;
+      }
+    }
+  }
+
 
   editPrice(temp) { 
     this.$http.put(`/api/items/${temp._id}&${temp.price}`);
-    for(var i = 0; i < this.list.length; i++){
-      if(this.list[i]._id == this.$scope._id) { 
-        this.list.splice(i, 1);
-      }
-    }
+    this.sleep(2000);
     this.$state.reload();
-
   }
 
   deleteListing(id) {
@@ -95,13 +99,14 @@ export default class ManageController {
     }
   };
 
-  delete() { 
+  delete() {
     this.$http.delete(`/api/items/${this.$scope._id}`);
     for(var i = 0; i < this.list.length; i++){
-      if(this.list[i]._id == this.$scope._id) { 
+      if(this.list[i]._id == this.$scope._id) {
         this.list.splice(i, 1);
       }
     }
+    this.sleep(2000);
     this.$state.reload();
   }
 }

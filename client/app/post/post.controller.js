@@ -59,7 +59,7 @@ export default class PostController {
           this.condition='';
           this.description='';
           this.price='';
-        })
+        });
     }
   }
 }

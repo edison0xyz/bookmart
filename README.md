@@ -1,6 +1,12 @@
-# project
+Edison LIM
+edisonjl@andrew.cmu.edu
 
-This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 4.1.0.
+## Introduction
+BookMart is a platform for students to buy and sell textbooks. 
+[https://bookmartt.heroku.com](https://bookmartt.heroku.com)
+
+This project is developed for 95882 - Enterprise Web Development as a short project done over one week (three days actually due to my procarstination)
+
 
 ## Getting Started
 
@@ -17,12 +23,8 @@ This project was generated with the [Angular Full-Stack Generator](https://githu
 
 2. Run `mongod` in a separate shell to keep an instance of the MongoDB Daemon running
 
-3. Run `gulp serve` to start the development server. It should automatically open the client in your browser when ready.
+3. Run `gulp serve` to start the development server. The deployment page should appear automatically. If it doesn't, fire up your browser and go to http://localhost:3000
 
 ## Build & development
 
 Run `gulp build` for building and `gulp serve` for preview.
-
-## Testing
-
-Running `npm test` will run the unit tests with karma.

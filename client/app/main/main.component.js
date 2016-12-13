@@ -5,6 +5,7 @@ import search from '../search/search.filter'
 
 export class MainController {
   $http;
+  $state;
   email = '';
   searchResults = [];
   Auth;

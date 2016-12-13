@@ -16,22 +16,19 @@ import {
 } from './app.config';
 
 import _Auth from '../components/auth/auth.module';
-import _Modal from '../components/modal/modal.service';
 import account from './account';
-import admin from './admin';
 import post from './post';
-import google from './google';
 import manage from './manage';
 import navbar from '../components/navbar/navbar.component';
-import footer from '../components/footer/footer.component';
 import main from './main/main.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
+//import admin from './admin';
 
 import './app.scss';
 
-angular.module('projectApp', [ngCookies, ngResource, ngSanitize, uiRouter, uiBootstrap, _Auth, _Modal,
-  account, admin, post, google, manage, navbar, footer, main, constants, util
+angular.module('projectApp', [ngCookies, ngResource, ngSanitize, uiRouter, uiBootstrap, _Auth,
+  account, post, manage, navbar, main, constants, util
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
