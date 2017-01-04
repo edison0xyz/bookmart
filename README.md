@@ -5,7 +5,7 @@ edisonjl@andrew.cmu.edu
 BookMart is a platform for students to buy and sell textbooks. 
 [https://bookmartt.heroku.com](https://bookmartt.heroku.com)
 
-This project is developed for 95882 - Enterprise Web Development as a short project done over one week (three days actually due to my procarstination)
+This project is developed for 95882 - Enterprise Web Development as a short project done over one week. Scaffolded with [Angular-fullstack](https://github.com/angular-fullstack)
 
 
 ## Getting Started
